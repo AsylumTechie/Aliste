@@ -131,9 +131,12 @@ const Products = () => {
                 </div>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item lead">$ {product.price}</li>
-                  {/* <li className="list-group-item">Dapibus ac facilisis in</li>
-                    <li className="list-group-item">Vestibulum at eros</li> */}
+                  <li className="list-group-item">
+                    ⭐ {product.rating?.rate} / 5 ({product.rating?.count}{" "}
+                    reviews)
+                  </li>
                 </ul>
+
                 <div className="card-body">
                   <Link
                     to={"/product/" + product.id}
