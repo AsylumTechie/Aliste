@@ -115,31 +115,36 @@ const Products = () => {
               className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4"
             >
               <div className="card text-center h-100" key={product.id}>
-                <img
-                  className="card-img-top p-3"
-                  src={product.image}
-                  alt="Card"
-                  height={300}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">
-                    {product.title.substring(0, 12)}...
-                  </h5>
-                  <p className="card-text">
-                    {product.description.substring(0, 90)}...
-                  </p>
-                </div>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item lead">$ {product.price}</li>
-                  <li className="list-group-item">
-                    ⭐ {product.rating?.rate} / 5 ({product.rating?.count}{" "}
-                    reviews)
-                  </li>
-                </ul>
+                <Link
+                  to={`/product/${product.id}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <img
+                    className="card-img-top p-3"
+                    src={product.image}
+                    alt="Card"
+                    height={300}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      {product.title.substring(0, 12)}...
+                    </h5>
+                    <p className="card-text">
+                      {product.description.substring(0, 90)}...
+                    </p>
+                  </div>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item lead">$ {product.price}</li>
+                    <li className="list-group-item">
+                      ⭐ {product.rating?.rate} / 5 ({product.rating?.count}{" "}
+                      reviews)
+                    </li>
+                  </ul>
+                </Link>
 
                 <div className="card-body">
                   <Link
-                    to={"/product/" + product.id}
+                    to={`/product/${product.id}`}
                     className="btn btn-dark m-1"
                   >
                     Buy Now
